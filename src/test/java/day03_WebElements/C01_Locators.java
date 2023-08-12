@@ -15,38 +15,43 @@ public class C01_Locators {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
+
         //Amazon sayfasına gidiniz.
         driver.get("https://amazon.com");
         driver.navigate().refresh();
         driver.navigate().refresh();
 
-
-        //Arama kutusunu locate ediniz ve iphone aratınız.
+        //Arama kutusunu locate ediniz ve iphone yazdırıp aratınız.
 
         /*
         <input type="text" id="twotabsearchtextbox" value="" name="field-keywords" autocomplete="off"
          placeholder="Search Amazon" class="nav-input nav-progressive-attribute" dir="auto" tabindex="0"
          aria-label="Search Amazon" spellcheck="false">
          */
-        /*
-        eğer bir webelementin locate ini bir kez kullnacaksak bir webelemente assing etmemize gerek yoktur
-         */
+
+        //Eğer bir webelementin locate'ini birden fazla kullanacaksak bir webelemente aşağıdaki gibi assing edebiliriz
+
         WebElement aramakutusuWebElementi = driver.findElement(By.id("twotabsearchtextbox"));
         aramakutusuWebElementi.sendKeys("iphone", Keys.ENTER);
         //aramakutusuWebElementi.submit(); //-->ENTER TUŞUNA BASAR
+
+        //Eğer bir locate'i tek bir kere kullanacaksak
+        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("iphone",Keys.ENTER);
+
         /*
-        bir sayfada herhangi bir webElementi locate etmek için sayfa üzerinde veya locate etmek istediğimiz webelement üzerinde sağ klik
-        yapıp incele deriz. Locate almak istediğimiz element, id attribute üne sahip ise id locator ı ile id attribute değerini
-        kullanarak yukardaki örnekteki gibi locate edebiliriz.
-          Locate ettiğimiz webelementi <input> tag'ına sahip ise o webelemente sendKeys() methodu ile
-        istediğimiz text'i gönderebiliriz.
-        Eğer bir arama butonu locate edip bir text gönderirsek 2 şekilde enter tuşuna bastırabiliriz
+          Bir sayfada herhangi bir webElementi locate etmek için sayfa üzerinde veya locate etmek istediğimiz webelement
+        üzerinde sağ klik yapıp incele deriz. Locate almak istediğimiz element, id attribute'üne sahip ise id locator'ı
+        ile id attribute değerini kullanarak yukardaki örnekteki gibi locate edebiliriz.
+          Locate ettiğimiz webelementi <input> tag'ına sahip ise o webelemente sendKeys() methodu ileistediğimiz text'i
+        gönderebiliriz.
+          Eğer bir arama kutusunu locate edip bir text gönderirsek 2 şekilde enter tuşuna bastırabiliriz:
         1. si submit()
         2. si tanımlanmış bir değer kümesi olan (enum) Keys.ENTER
          */
-        //Eğer bir locate i tek br kere kullanacaksak
-        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("iphone",Keys.ENTER);
 
+        //sayfayı kapatınız
+        driver.close();
 
     }
 }

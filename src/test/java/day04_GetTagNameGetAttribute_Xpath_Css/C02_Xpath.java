@@ -19,14 +19,17 @@ public class C02_Xpath {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
         //web sayfasına gidin. https://www.amazon.com/
         driver.get("https://www.amazon.com/");
         driver.navigate().refresh();
         driver.navigate().refresh();
 
         //Search(ara) "city bike"(arama kutusunu xpath ile locate edelim)
+
         WebElement aramaKutusu = driver.findElement(By.xpath("//*[@type='text']"));
         aramaKutusu.sendKeys("city bike"+ Keys.ENTER);
+
         /*
             Xpath kullanımına // sembolleri ile başlarız. Bu sembollerden sonra tag name belirtmemiz gerekir.
         tag name yerine * sembolunü kullanabilirsiniz. Bu sembol tag name farketmeksizin anlamına gelir.
@@ -45,14 +48,17 @@ public class C02_Xpath {
 
 
         //Amazon'da görüntülenen ilgili sonuçların sayısını yazdırın
+
         WebElement aramaSonucu = driver.findElement(By.xpath("(//*[@class='sg-col-inner'])[1]"));
         System.out.println(aramaSonucu.getText());
 
         //Sadece sonuc sayısını yazdırınız
+
         String [] sonucSayisi = aramaSonucu.getText().split(" ");
         System.out.println("Sonuc Sayisi = "+sonucSayisi[2]);
 
         //Sonra karşınıza çıkan ilk sonucun resmine tıklayın.
+
         driver.findElement(By.xpath("(//h2//a)[1]")).click();
         //xpath alırken direk tag'ları kullanarakta unique sonuç vermezse yukarıdaki örnekteki gibi index ile elementi handle edebiliriz
 
