@@ -63,6 +63,7 @@ public class C01_DropdownMenu {
         //c. Select object i kullanarak 3 farkli sekilde secim yapiniz
         selectYil.selectByIndex(5);
         selectAy.selectByValue("4");
+        // ay.sendKeys("may"); -->erol hocanın kullandığı yöntem
         selectGun.selectByVisibleText("15");
     }
 
