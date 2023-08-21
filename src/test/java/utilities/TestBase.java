@@ -23,7 +23,7 @@ public abstract class TestBase {
     @After
     public void tearDown() throws Exception {
         bekle(3);
-        //driver.close();
+        driver.quit();
     }
 
     //HARD WAIT
@@ -45,5 +45,15 @@ public abstract class TestBase {
     public void selectIndex(WebElement ddm,int index){
         Select select = new Select(ddm);
         select.selectByIndex(index);
+    }
+
+    //Window Handles
+    public void window(int index){
+        driver.switchTo().window(driver.getWindowHandles().toArray()[index].toString());
+    }
+
+    //Iframe Index
+    public void frameIndex(int index){
+        driver.switchTo().frame(index);
     }
 }

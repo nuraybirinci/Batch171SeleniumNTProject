@@ -18,10 +18,12 @@ public class C01_ActionsTest extends TestBase {
         //Kutuya sag tıklayın
         WebElement kutu = driver.findElement(By.id("hot-spot"));
         Actions actions = new Actions(driver);
-        actions.contextClick(kutu).perform();
+        actions.contextClick(kutu).perform(); //-->locate ettiğimiz webelemente sağ klik yapar.
+        //Kullandığımız action'ı işleme alması için perform() methodu kullanmamız gerekiyor.
 
         //Alert'te cikan yazinin"You selected a context menu"oldugunu test ediny
         Assert.assertEquals("You selected a context menu",driver.switchTo().alert().getText());
+        //driver.switchTo().alert().getText() meethodu ile alert üzerindeki mesajı aldık ve doğrulama yaptık
         bekle(3);
 
         //Tamam diyerek alert'i kapatın
