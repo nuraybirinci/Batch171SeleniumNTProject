@@ -11,7 +11,7 @@ public class C03_FileExists {
         /*
         Bilgisayarımızdaki herhangi bir dosyanın varlığını test edebilmemiz için;
             1-Öncelikle varlığını test etmek istediğimiz dosyanın yolunu alırız.
-            Dosyanın yolunu alabilmek dosya üzerine sağ klik yapıp YOL OLARAK KOPYALA seceneği ile
+            Dosyanın yolunu alabilmek dosya üz erine sağ klik yapıp YOL OLARAK KOPYALA seceneği ile
             dosyanın yolunu kopyalar dosyaYolu isminde String bir değişkene assing ederiz.
             (Windows'un alt sürümlerinden birini kullanıyorsanız pratik olarak dosya yolu almak için
             shift tuşuna basılı tutarak sağ klik yaparsanız YOL OLARAK KOPYALA seçeneği çıkmış olur ve o
@@ -21,8 +21,8 @@ public class C03_FileExists {
             edebiliriz.
          */
         //Bilgisayarımızdaki herhangi bir dosyanın varlığını doğrulayalım
-        //"C:\Users\Lenovo\OneDrive\Masaüstü\B171.txt" -->Dosya yolunu önce yoruma aldık
-        String dosyaYolu = "C:\\Users\\Lenovo\\OneDrive\\Masaüstü\\B171.txt";
+        //""C:\Users\nuray\Desktop\batch171.txt"" -->Dosya yolunu önce yoruma aldık
+        String dosyaYolu = "C:\\Users\\nuray\\Desktop\\batch171.txt";
         System.out.println(Files.exists(Paths.get(dosyaYolu)));//-->Eğer dosya varsa TRUE yoksa FALSE
 
 

@@ -8,6 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
 
 public abstract class TestBase {
@@ -23,7 +26,7 @@ public abstract class TestBase {
     @After
     public void tearDown() throws Exception {
         bekle(3);
-        driver.quit();
+        //driver.quit();
     }
 
     //HARD WAIT
@@ -55,5 +58,28 @@ public abstract class TestBase {
     //Iframe Index
     public void frameIndex(int index){
         driver.switchTo().frame(index);
+    }
+    //UploadFile Robot Class
+    public void uploadFilePath(String dosyaYolu) {
+        try {
+            bekle(3);
+            StringSelection stringSelection = new StringSelection(dosyaYolu);
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+            Robot robot = new Robot();
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            bekle(3);
+            robot.keyPress(KeyEvent.VK_V);
+            bekle(3);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            bekle(3);
+            robot.keyRelease(KeyEvent.VK_V);
+            bekle(3);
+            robot.keyPress(KeyEvent.VK_ENTER);
+            bekle(3);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+            bekle(3);
+        } catch (AWTException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
