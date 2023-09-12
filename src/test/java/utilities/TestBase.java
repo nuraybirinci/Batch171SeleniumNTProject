@@ -3,6 +3,7 @@ package utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,6 +16,7 @@ import java.time.Duration;
 
 public abstract class TestBase {
     protected WebDriver driver;
+
     @Before
     public void setUp() throws Exception {
         WebDriverManager.chromedriver().setup();
@@ -30,35 +32,36 @@ public abstract class TestBase {
     }
 
     //HARD WAIT
-    public void bekle(int saniye){
+    public void bekle(int saniye) {
         try {
-            Thread.sleep(saniye*1000);
+            Thread.sleep(saniye * 1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
 
     //Select VisibleText DDM
-    public void selectVisible(WebElement ddm,String option){
+    public void selectVisible(WebElement ddm, String option) {
         Select select = new Select(ddm);
         select.selectByVisibleText(option);
     }
 
     //Select Index DDM
-    public void selectIndex(WebElement ddm,int index){
+    public void selectIndex(WebElement ddm, int index) {
         Select select = new Select(ddm);
         select.selectByIndex(index);
     }
 
     //Window Handles
-    public void window(int index){
+    public void window(int index) {
         driver.switchTo().window(driver.getWindowHandles().toArray()[index].toString());
     }
 
     //Iframe Index
-    public void frameIndex(int index){
+    public void frameIndex(int index) {
         driver.switchTo().frame(index);
     }
+
     //UploadFile Robot Class
     public void uploadFilePath(String dosyaYolu) {
         try {
@@ -80,6 +83,16 @@ public abstract class TestBase {
             bekle(3);
         } catch (AWTException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    //JSExecutor Click Method
+    public void jsClick(WebElement element) {
+        try {
+            element.click();
+        } catch (Exception e) {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].click();", element);
         }
     }
 }

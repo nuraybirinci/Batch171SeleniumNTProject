@@ -11,7 +11,8 @@ public class C05_ManageMethods {
         WebDriverManager.chromedriver().setup();
         WebDriver driver= new ChromeDriver();
         driver.manage().window().minimize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));//--> Max. 15 sn. sayfadaki tüm elementlerin oluşamsını bekler
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));//-->Max. 15 sn.sayfadaki tüm elementlerin oluşması için bekler
+
         /*
         Manuel olarak bir sayfayı açtığımızda nasıl maximize yapıyorsak, otomasyon ilede yukarıdaki örnekteki gibi sayfayı
         maximize yapabiliriz. Driver'ın tüm elementleri net bir şekilde görebilmesi için bunu yapmamız testlerimizin daha
@@ -28,12 +29,16 @@ public class C05_ManageMethods {
         driver.get("https://techproeducation.com");
 
         //sayfa başlığının TechPro Education olduğunu test ediniz
+        //Not: olduğunu dediği zaman if bloğunda "equals", içerdiğini dediği zaman "contains" kullanırız
+
         String actualTitle = driver.getTitle();
         String expectedTitle = "TechPro Education";
 
         if (actualTitle.equals(expectedTitle)){
             System.out.println("TEST PASSED");
         }else System.out.println("TEST FAILED");
+
+
 
         //facebook sayfasına gidiniz
         driver.get("https://facebook.com");
