@@ -1,6 +1,6 @@
 package day06_Junit;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -25,7 +25,7 @@ public class C06_Assertion {
     WebDriver driver;
     @Before
     public void setUp() throws Exception {
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));

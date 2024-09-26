@@ -1,12 +1,12 @@
 package day02_DriverMethods;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class C04_ManageMethods {
     public static void main(String[] args) throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
         //TechPro sayfasina gidelim. https://www.techproeducation.com/
@@ -36,7 +36,7 @@ public class C04_ManageMethods {
         Thread.sleep(3000);
 
         //Sayfayi kapatin
-        driver.close();
+        driver.quit();
 
     }
 }

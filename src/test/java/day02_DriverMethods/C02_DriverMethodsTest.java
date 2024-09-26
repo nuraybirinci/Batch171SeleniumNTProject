@@ -1,12 +1,12 @@
 package day02_DriverMethods;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class C02_DriverMethodsTest {
     public static void main(String[] args) {
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
         //Amazon sayfasina gidelim. https://www.amazon.com/

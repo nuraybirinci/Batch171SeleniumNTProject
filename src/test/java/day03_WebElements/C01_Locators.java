@@ -1,6 +1,6 @@
 package day03_WebElements;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +11,7 @@ import java.time.Duration;
 
 public class C01_Locators {
     public static void main(String[] args) {
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
@@ -36,8 +36,8 @@ public class C01_Locators {
         aramakutusuWebElementi.sendKeys("iphone", Keys.ENTER);
         //aramakutusuWebElementi.submit(); //-->ENTER TUŞUNA BASAR
 
-        //Eğer bir locate'i tek bir kere kullanacaksak
-        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("iphone",Keys.ENTER);
+        //Eğer bir locate'i tek bir kere kullanacaksak:
+        //driver.findElement(By.id("twotabsearchtextbox")).sendKeys("iphone",Keys.ENTER);
 
         /*
           Bir sayfada herhangi bir webElementi locate etmek için sayfa üzerinde veya locate etmek istediğimiz webelement

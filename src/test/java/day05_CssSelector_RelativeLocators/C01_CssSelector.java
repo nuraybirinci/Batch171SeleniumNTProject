@@ -1,6 +1,6 @@
 package day05_CssSelector_RelativeLocators;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class C01_CssSelector {
     public static void main(String[] args) throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));

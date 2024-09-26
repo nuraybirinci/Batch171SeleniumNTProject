@@ -1,6 +1,6 @@
 package day06_Junit;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,7 +22,7 @@ public class C05_RadioButton {
     WebDriver driver;
     @Before
     public void setUp() throws Exception {
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));

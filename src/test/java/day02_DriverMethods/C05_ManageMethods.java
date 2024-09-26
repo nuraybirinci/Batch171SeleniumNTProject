@@ -1,6 +1,6 @@
 package day02_DriverMethods;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -8,9 +8,9 @@ import java.time.Duration;
 
 public class C05_ManageMethods {
     public static void main(String[] args) throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
         WebDriver driver= new ChromeDriver();
-        driver.manage().window().minimize();
+        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));//-->Max. 15 sn.sayfadaki tüm elementlerin oluşması için bekler
 
         /*
@@ -28,11 +28,11 @@ public class C05_ManageMethods {
         //techpro sayfasına gidiniz
         driver.get("https://techproeducation.com");
 
-        //sayfa başlığının TechPro Education olduğunu test ediniz
+        //sayfa başlığının TechPro Education IT Programs olduğunu test ediniz
         //Not: olduğunu dediği zaman if bloğunda "equals", içerdiğini dediği zaman "contains" kullanırız
 
         String actualTitle = driver.getTitle();
-        String expectedTitle = "TechPro Education";
+        String expectedTitle = "TechPro Education IT Programs";
 
         if (actualTitle.equals(expectedTitle)){
             System.out.println("TEST PASSED");
