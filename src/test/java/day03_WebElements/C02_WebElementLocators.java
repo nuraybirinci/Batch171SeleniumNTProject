@@ -65,6 +65,6 @@ public class C02_WebElementLocators {
         }
 
         //sayfayı kapatalım
-        driver.close();
+        driver.quit();
     }
 }
