@@ -22,7 +22,7 @@ public class C01_GetTagNameGetAttribute {
         //<input id="searchHeaderInput" type="text" class="form-input" placeholder="Search Program">
 
         //Arama kutusunu locate edelim
-        WebElement aramaKutusu = driver.findElement(By.id("searchHeaderInPut"));
+        WebElement aramaKutusu = driver.findElement(By.id("searchHeaderInput"));
 
         //arama kutusunun tag name'inin input olduğunu test edelim
 
@@ -46,7 +46,7 @@ public class C01_GetTagNameGetAttribute {
         }else System.out.println("TEST FAILED");
 
         //Sayfayı kapatınız
-        driver.close();
+        driver.quit();
 
 
     }
