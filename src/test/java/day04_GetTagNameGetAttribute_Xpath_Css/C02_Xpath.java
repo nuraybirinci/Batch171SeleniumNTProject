@@ -60,7 +60,8 @@ public class C02_Xpath {
         //Sonra karşınıza çıkan ilk sonucun resmine tıklayın.
 
         driver.findElement(By.xpath("(//h2//a)[1]")).click();
-        //xpath alırken direk tag'ları kullanarakta unique sonuç vermezse yukarıdaki örnekteki gibi index ile elementi handle edebiliriz
+        //xpath alırken direk tag'ları kullanarakta unique sonuç vermezse yukarıdaki örnekteki gibi index ile elementi
+        // handle edebiliriz
 
         //sayfayi kapatınız
         driver.close();
