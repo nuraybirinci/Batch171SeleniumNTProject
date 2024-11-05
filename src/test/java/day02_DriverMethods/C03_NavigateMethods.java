@@ -8,6 +8,7 @@ public class C03_NavigateMethods {
     public static void main(String[] args) throws InterruptedException {
         //WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
+
         //Youtube ana sayfasina gidelim . https://www.youtube.com/
         driver.navigate().to("https://www.youtube.com"); //--> get() methodu gibi string olarak girilen Url'ye gider.
         Thread.sleep(3000);//-->java dan gelen bekleme

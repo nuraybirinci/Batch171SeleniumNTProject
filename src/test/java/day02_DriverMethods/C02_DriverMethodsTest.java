@@ -11,9 +11,11 @@ public class C02_DriverMethodsTest {
 
         //Amazon sayfasina gidelim. https://www.amazon.com/
         driver.get("https:/amazon.com");
+
         //Sayfa basligini(title) yazdirin
         String actualTitle = driver.getTitle();
         System.out.println("Sayfa Başlığı : "+actualTitle);
+
 
         //Sayfa basliginin "Amazon" icerdigini test edin
         System.out.println(actualTitle.contains("Amazon"));
@@ -48,7 +50,7 @@ public class C02_DriverMethodsTest {
         }else System.out.println("FAILED");
 
         //Sayfayi kapatin.
-        driver.close();//-->En son driver 'ın olduğu sayfayı kapatır
+        //driver.close();//-->En son driver 'ın olduğu sayfayı kapatır
         //driver.quit();-->Bizim otomasyon ile açtığımız birden fazla sekme ve pencereyi kapatmak için kullanırız
 
 
