@@ -43,7 +43,7 @@ public class C01_Locators {
           Bir sayfada herhangi bir webElementi locate etmek için sayfa üzerinde veya locate etmek istediğimiz webelement
         üzerinde sağ klik yapıp incele deriz. Locate almak istediğimiz element, id attribute'üne sahip ise id locator'ı
         ile id attribute değerini kullanarak yukardaki örnekteki gibi locate edebiliriz.
-          Locate ettiğimiz webelementi <input> tag'ına sahip ise o webelemente sendKeys() methodu ileistediğimiz text'i
+          Locate ettiğimiz webelementi <input> tag'ına sahip ise o webelemente sendKeys() methodu ile istediğimiz text'i
         gönderebiliriz.
           Eğer bir arama kutusunu locate edip bir text gönderirsek 2 şekilde enter tuşuna bastırabiliriz:
         1. si submit()

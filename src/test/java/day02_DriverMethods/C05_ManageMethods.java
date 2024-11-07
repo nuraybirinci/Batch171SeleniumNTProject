@@ -47,6 +47,7 @@ public class C05_ManageMethods {
         if (driver.getCurrentUrl().contains("facebook")){
             System.out.println("TEST PASSED");
         }else System.out.println("TEST FAILED");
+        Thread.sleep(3000);
 
         //techpro sayfasına geri dönününüz
         driver.navigate().back();
