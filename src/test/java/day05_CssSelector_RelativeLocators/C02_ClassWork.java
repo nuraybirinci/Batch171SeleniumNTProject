@@ -45,6 +45,8 @@ public class C02_ClassWork {
 
         //“The payment was successfully submitted.” mesajinin ciktigini control edin
         WebElement mesaj = driver.findElement(By.xpath("(//span)[1]"));
+        // spanli kod yerine yzilabilecekler: //*[text()='The payment was successfully submitted.']
+        //                                    div[id='alert_content']
         String actualMesaj = mesaj.getText();
         String expectedMesaj = "The payment was successfully submitted.";
         if (actualMesaj.equals(expectedMesaj)){
