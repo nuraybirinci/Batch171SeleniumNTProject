@@ -23,6 +23,7 @@ public class C06_Assertion {
 
    */
     WebDriver driver;
+
     @Before
     public void setUp() throws Exception {
         //WebDriverManager.chromedriver().setup();
@@ -30,7 +31,7 @@ public class C06_Assertion {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.get("https://www.youtube.com");
-        
+
     }
 
     @Test
@@ -38,7 +39,7 @@ public class C06_Assertion {
         //TEST1=> Sayfa başlığının “YouTube” oldugunu test edin
         String actualTitle = driver.getTitle();
         String expectedTitle = "YouTube";
-        Assert.assertEquals(expectedTitle,actualTitle);
+        Assert.assertEquals(expectedTitle, actualTitle);
 
         //      => YouTube resminin görüntülendiğini (isDisplayed()) test edin
         WebElement logo = driver.findElement(By.xpath("(//*[@id='logo-icon'])[1]"));
@@ -55,7 +56,7 @@ public class C06_Assertion {
     @Test
     public void test03() {
         //TEST3=> wrongTitleTest  => Sayfa basliginin “youtube” olmadigini dogrulayin
-        Assert.assertNotEquals("youtube",driver.getTitle());
+        Assert.assertNotEquals("youtube", driver.getTitle());
     }
 
     @After

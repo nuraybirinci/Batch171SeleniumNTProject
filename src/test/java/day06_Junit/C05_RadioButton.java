@@ -20,6 +20,7 @@ public class C05_RadioButton {
         Secili degilse cinsiyet butonundan size uygun olani secin
      */
     WebDriver driver;
+
     @Before
     public void setUp() throws Exception {
         //WebDriverManager.chromedriver().setup();
@@ -42,7 +43,7 @@ public class C05_RadioButton {
         WebElement ozel = driver.findElement(By.xpath("//input[@value='-1']"));
 
         // Secili degilse cinsiyet butonundan size uygun olani secin
-        if (!erkek.isSelected()){
+        if (!erkek.isSelected()) {
             erkek.click();
         }
     }
