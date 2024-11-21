@@ -30,6 +30,9 @@ public class C02_BeforeAfter {
         System.out.println("Test03 çalıştı");
     }
 
+    @Test
+    public void test04() {System.out.println("Test04 çalıştı"); }
+
     @After
     public void tearDown() throws Exception {
         System.out.println("Her test methodundan sonra bir kez @After çalışır");
