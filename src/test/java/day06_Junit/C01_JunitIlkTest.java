@@ -50,7 +50,8 @@ junitten gelen @Test notasyonu ile test script'lerimizi çalıştırabileceğiz.
 
     @Test
     public void test4() {
-        //WebDriverManager.chromedriver().setup();
+        //
+        // WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
