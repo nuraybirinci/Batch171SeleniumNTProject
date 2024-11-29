@@ -26,24 +26,24 @@ public class C01_GetTagNameGetAttribute {
 
         //arama kutusunun tag name'inin input olduğunu test edelim
 
-        System.out.println("Arama Kutusu WebElementi Tag Name'i : "+aramaKutusu.getTagName());//-->input
+        System.out.println("Arama Kutusu WebElementi Tag Name'i : " + aramaKutusu.getTagName());//-->input
         String gercekTagName = aramaKutusu.getTagName();
         String beklenenTagName = "input";
 
-        if (gercekTagName.equals(beklenenTagName)){
+        if (gercekTagName.equals(beklenenTagName)) {
             System.out.println("TEST PASSED");
-        }else {
+        } else {
             System.out.println("TEST FAILED");
         }
 
         //arama kutusunun class attribute'unun değerinin form-input olduğunu test ediniz
 
         String gercekAttributeName = aramaKutusu.getAttribute("class");//--> form-input
-        System.out.println("Class Attribute Değeri : "+gercekAttributeName);
+        System.out.println("Class Attribute Değeri : " + gercekAttributeName);
         String istenenAttributeDegeri = "form-input";
-        if (gercekAttributeName.equals(istenenAttributeDegeri)){
+        if (gercekAttributeName.equals(istenenAttributeDegeri)) {
             System.out.println("TEST PASSED");
-        }else System.out.println("TEST FAILED");
+        } else System.out.println("TEST FAILED");
 
         //Sayfayı kapatınız
         driver.quit();
